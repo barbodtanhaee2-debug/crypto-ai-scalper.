@@ -1,0 +1,25 @@
+{
+  "experiment_family": "stage3_1_lab_validation",
+  "strategy": "demo_close_follow",
+  "execution": "recorded_bookTicker",
+  "decision_clock": "host_receive",
+  "stale_after_seconds": 3.0,
+  "symbol": "BTCUSDT",
+  "long_only": true,
+  "initial_equity": 100.0,
+  "fee_rate_per_side": 0.001,
+  "slippage_rate_per_side": 0.0005,
+  "spread_fraction_synthetic_only": 0.0002,
+  "risk_fraction": 0.005,
+  "daily_loss_limit_fraction": 0.02,
+  "max_drawdown_fraction": 0.10,
+  "min_closed_trades_to_rank": 30,
+  "split": {
+    "method": "chronological_by_candle_close",
+    "train": 0.5,
+    "validation": 0.25,
+    "test": 0.25
+  },
+  "random_seed": 0,
+  "notes": "Frozen cost assumptions from BacktestSettings. Not an optimization config."
+}

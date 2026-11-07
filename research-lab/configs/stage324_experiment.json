@@ -1,0 +1,75 @@
+{
+  "experiment_id_prefix": "stage324",
+  "stage": "3.2.4",
+  "authorization": "infrastructure_and_offline_tests_only",
+  "dataset_id": "binance_spot_btcusdt_vision_stage324",
+  "provenance": "BINANCE_SPOT_HISTORICAL",
+  "source": "https://data.binance.vision/",
+  "symbol": "BTCUSDT",
+  "market": "spot",
+  "research_start": "2024-11-04T00:00:00+00:00",
+  "research_end_exclusive": "2026-10-31T04:20:59.999000+00:00",
+  "sealed_holdout_start": "2026-10-31T04:20:59.999000+00:00",
+  "manifest_path": "research-lab/data/binance_spot/BTCUSDT/manifests/dataset_manifest_20261104T184815Z.json",
+  "manifest_sha256": "73ba52180fdc77fbd51e04ce881dcd44b623924ea478b99c9b563e99d3d91be8",
+  "arms": {
+    "B0": {
+      "id": "B0",
+      "strategy": "momentum_breakout_logged",
+      "notes": "Frozen production momentum_breakout via DecisionLoggingAdapter. No parameter changes."
+    },
+    "H1": {
+      "id": "H1",
+      "strategy": "h1_confirmed_momentum_breakout",
+      "notes": "Existing next-bar close confirmation. Rules unchanged."
+    }
+  },
+  "excluded_arms_pending_approval": [
+    "C1",
+    "C2",
+    "M1",
+    "A1"
+  ],
+  "execution": {
+    "model": "next_available_candle_open",
+    "signal_after": "candle_N_close",
+    "earliest_fill": "candle_N_plus_1_open",
+    "missing_next_candle": "cancel_pending_fill_no_fabrication",
+    "incompatible_next_open": "cancel_pending_then_still_evaluate_candle",
+    "observation_quote": "synthetic_mid_equals_signal_close",
+    "fill_quote": "synthetic_mid_equals_next_open",
+    "synthetic_label": "synthetic_historical_candle_quote; not bookTicker; Stage 3.2.4 research only",
+    "not_l2_order_book": true,
+    "intra_bar_protective_stops_simulated": false,
+    "formal_entrypoint": "research_lab.backtesting.historical_replay.run_formal_historical_replay",
+    "formal_force_close_at_end": false,
+    "formal_requires_cutoff_validated_candles": true,
+    "tape_vs_historical": "separate_dual_tracks_not_equivalent_to_live"
+  },
+  "costs": {
+    "initial_equity": 100.0,
+    "fee_rate_per_side": 0.001,
+    "slippage_rate_per_side": 0.0005,
+    "spread_fraction": 0.0002,
+    "label": "Frozen BacktestSettings assumptions; not measured venue fees."
+  },
+  "risk": {
+    "long_only": true,
+    "risk_fraction": 0.005,
+    "daily_loss_limit_fraction": 0.02,
+    "max_drawdown_fraction": 0.1
+  },
+  "missing_data_policy": "detect_gaps; never_interpolate; cancel_pending_on_gap",
+  "min_closed_trades_to_rank": 30,
+  "ranking_allowed_this_phase": false,
+  "full_historical_scoring_authorized": false,
+  "walk_forward_authorized": false,
+  "aggtrade_fill_simulator_authorized": false,
+  "notes": [
+    "Infrastructure + 3.2.4.2 reliability patch. Short-fixture smoke permitted.",
+    "Do not score sealed holdout.",
+    "Do not optimize or rank candidates in this phase.",
+    "Historical candle quotes are synthetic; not L2; no intra-bar protective stops.",
+    "Tape and historical results must remain separate; not live-equivalent."
+  ]
+}

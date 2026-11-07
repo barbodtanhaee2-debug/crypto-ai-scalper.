@@ -1,0 +1,214 @@
+{
+  "stage": "3.2.5",
+  "run_id": "20261106T063406Z",
+  "preflight": {
+    "manifest_path": "F:\\crypto-ai-scalper\\research-lab\\data\\binance_spot\\BTCUSDT\\manifests\\dataset_manifest_20261104T184815Z.json",
+    "manifest_sha256": "73ba52180fdc77fbd51e04ce881dcd44b623924ea478b99c9b563e99d3d91be8",
+    "bound_dataset_id": "binance_spot_btcusdt_vision_stage324",
+    "research_cutoff": "2026-10-31T04:20:59.999000+00:00",
+    "user_authorization": "Stage 3.2.5 explicit user approval for one offline B0/H1 historical comparison",
+    "config_flag_full_historical_scoring_authorized": false,
+    "provenance": "BINANCE_SPOT_HISTORICAL"
+  },
+  "window": {
+    "research_start": "2024-11-04T00:00:00+00:00",
+    "research_end_exclusive": "2026-10-31T04:20:59.999000+00:00",
+    "candle_count": 1045700,
+    "excluded_at_or_after_cutoff": 5500,
+    "max_close": "2026-10-31T04:19:59.999999+00:00",
+    "candle_source": "load_klines"
+  },
+  "settings": {
+    "initial_equity": 100.0,
+    "fee_rate_per_side": 0.001,
+    "slippage_rate_per_side": 0.0005,
+    "spread_fraction": 0.0002,
+    "risk_fraction": 0.005,
+    "daily_loss_limit_fraction": 0.02,
+    "max_drawdown_fraction": 0.1
+  },
+  "force_close_at_end": false,
+  "execution_model": "next_available_candle_open",
+  "min_closed_trades_to_rank": 30,
+  "arms": {
+    "B0": {
+      "fingerprints": [
+        "c0118119ae1e0ce10543181704b024a7cfcf7a0539f4aaabf707cd8e27df34bb",
+        "c0118119ae1e0ce10543181704b024a7cfcf7a0539f4aaabf707cd8e27df34bb"
+      ],
+      "fingerprints_equal": true,
+      "trades_equal": true,
+      "primary_summary": {
+        "strategy": "momentum_breakout",
+        "candles_processed": 1045700,
+        "completed_scored_trades": 41,
+        "unresolved_positions": 0,
+        "entries_accepted": 41,
+        "entries_rejected": 18211,
+        "fills_deferred": 36714,
+        "fills_executed": 18293,
+        "fills_cancelled_missing_next": 0,
+        "fills_cancelled_incompatible": 18421,
+        "missing_intervals": 0,
+        "decision_counts": {
+          "no_trade": 1008986,
+          "entry": 36673,
+          "exit": 41
+        },
+        "rejection_reasons": {
+          "Insufficient completed bars.": 20,
+          "No strategy entry condition.": 1008685,
+          "Position sizing exceeds the configured stop-and-cost risk budget.": 20,
+          "Position remains open.": 281,
+          "Daily-loss limit reached; new entry denied.": 122,
+          "Maximum drawdown limit reached; new entry denied.": 18069
+        },
+        "event_counts": {
+          "strategy_decision": 36714,
+          "pending_fill_cancelled_incompatible_next_open": 18421,
+          "deferred_fill": 18293
+        },
+        "metrics": {
+          "net_profit_and_loss": -10.163937885744927,
+          "net_return_percentage": -10.163937885744955,
+          "completed_trades": 41,
+          "win_rate": 0.17073170731707318,
+          "average_winning_trade": 0.18246896718612596,
+          "average_losing_trade": -0.33650648988375903,
+          "profit_factor": 0.1116386798840133,
+          "expectancy_per_trade": -0.2479009240425592,
+          "maximum_drawdown": 0.10163937885744957,
+          "average_holding_seconds": 471.219512195122,
+          "fees_paid": 7.4757578829069,
+          "estimated_spread_costs": 0.7475758587484007,
+          "estimated_slippage": 3.7378792038782502,
+          "rejected_entries": 18211,
+          "unresolved_exits": 0,
+          "exposure_time_seconds": 19320.0,
+          "candles_processed": 1045700,
+          "stale_candle_decisions": 0,
+          "stale_protective": 0,
+          "final_equity": 89.83606211425504,
+          "insufficient_sample": false,
+          "min_closed_trades_to_rank": 30,
+          "ranking_allowed": true,
+          "ranking_note": "Sample is large enough to rank after costs.",
+          "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+        },
+        "execution_model": "next_available_candle_open",
+        "force_close_at_end": false,
+        "assumptions": [
+          "synthetic_historical_candle_quote; not bookTicker; Stage 3.2.4 research only",
+          "Signal is generated only after candle N closes. Earliest simulated fill uses candle N+1 open as mid, then frozen synthetic spread and slippage. Missing N+1 cancels the pending fill (no fabrication). If N+1 open ask falls outside the signal stop/target band, the pending entry is cancelled (no stop/target rewrite) and candle N+1 is still evaluated. Observation quotes at decision time use candle N close mid and are labelled synthetic. Decision/position timestamps are aligned to the fill instant for PaperBroker validation. Quotes are synthetic candle-derived mid\u00b1spread \u2014 not historical L2 / bookTicker. Intra-bar protective stop execution is not simulated on this path. Tape (BINANCE_SPOT_LIVE_CAPTURE) and historical candle results must stay separate; historical results are not equivalent to live execution.",
+          "No aggregate-trade fill simulator.",
+          "No sealed-holdout observations loaded.",
+          "Research-lab buffered PaperBroker journal writes (flush at end / batch).",
+          "mark_to_market journal rows omitted (in-memory marks retained).",
+          "Trailing evaluate bar window (lookback/hold sized); full-history O(n\u00b2) validation avoided.",
+          "fee_rate_per_side=0.001",
+          "slippage_rate_per_side=0.0005",
+          "spread_fraction=0.0002"
+        ]
+      },
+      "elapsed_seconds": {
+        "a": 98.42341208457947,
+        "b": 97.46308040618896
+      }
+    },
+    "H1": {
+      "fingerprints": [
+        "4a448f4730ade9bd414262fd9d593bb25ab8e1ce5602b59b803c35be84ea7d7d",
+        "4a448f4730ade9bd414262fd9d593bb25ab8e1ce5602b59b803c35be84ea7d7d"
+      ],
+      "fingerprints_equal": true,
+      "trades_equal": true,
+      "primary_summary": {
+        "strategy": "h1_confirmed_momentum_breakout",
+        "candles_processed": 1045700,
+        "completed_scored_trades": 40,
+        "unresolved_positions": 0,
+        "entries_accepted": 40,
+        "entries_rejected": 10694,
+        "fills_deferred": 29195,
+        "fills_executed": 10774,
+        "fills_cancelled_missing_next": 0,
+        "fills_cancelled_incompatible": 18421,
+        "missing_intervals": 0,
+        "decision_counts": {
+          "no_trade": 1016505,
+          "entry": 29155,
+          "exit": 40
+        },
+        "rejection_reasons": {
+          "Insufficient completed bars.": 20,
+          "No strategy entry condition.": 1000546,
+          "H1 pending next-bar confirmation.": 15647,
+          "Position remains open.": 292,
+          "Position sizing exceeds the configured stop-and-cost risk budget.": 21,
+          "Daily-loss limit reached; new entry denied.": 46,
+          "Maximum drawdown limit reached; new entry denied.": 10627
+        },
+        "event_counts": {
+          "strategy_decision": 29195,
+          "pending_fill_cancelled_incompatible_next_open": 18421,
+          "deferred_fill": 10774
+        },
+        "metrics": {
+          "net_profit_and_loss": -10.047782821887592,
+          "net_return_percentage": -10.04778282188752,
+          "completed_trades": 40,
+          "win_rate": 0.15,
+          "average_winning_trade": 0.1928544500794206,
+          "average_losing_trade": -0.329556162422474,
+          "profit_factor": 0.10326961571327194,
+          "expectancy_per_trade": -0.2511945705471898,
+          "maximum_drawdown": 0.10047782821887609,
+          "average_holding_seconds": 498.0,
+          "fees_paid": 7.284500504558901,
+          "estimated_spread_costs": 0.7284501104784805,
+          "estimated_slippage": 3.642250472021489,
+          "rejected_entries": 10694,
+          "unresolved_exits": 0,
+          "exposure_time_seconds": 19920.0,
+          "candles_processed": 1045700,
+          "stale_candle_decisions": 0,
+          "stale_protective": 0,
+          "final_equity": 89.95221717811248,
+          "insufficient_sample": false,
+          "min_closed_trades_to_rank": 30,
+          "ranking_allowed": true,
+          "ranking_note": "Sample is large enough to rank after costs.",
+          "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+        },
+        "execution_model": "next_available_candle_open",
+        "force_close_at_end": false,
+        "assumptions": [
+          "synthetic_historical_candle_quote; not bookTicker; Stage 3.2.4 research only",
+          "Signal is generated only after candle N closes. Earliest simulated fill uses candle N+1 open as mid, then frozen synthetic spread and slippage. Missing N+1 cancels the pending fill (no fabrication). If N+1 open ask falls outside the signal stop/target band, the pending entry is cancelled (no stop/target rewrite) and candle N+1 is still evaluated. Observation quotes at decision time use candle N close mid and are labelled synthetic. Decision/position timestamps are aligned to the fill instant for PaperBroker validation. Quotes are synthetic candle-derived mid\u00b1spread \u2014 not historical L2 / bookTicker. Intra-bar protective stop execution is not simulated on this path. Tape (BINANCE_SPOT_LIVE_CAPTURE) and historical candle results must stay separate; historical results are not equivalent to live execution.",
+          "No aggregate-trade fill simulator.",
+          "No sealed-holdout observations loaded.",
+          "Research-lab buffered PaperBroker journal writes (flush at end / batch).",
+          "mark_to_market journal rows omitted (in-memory marks retained).",
+          "Trailing evaluate bar window (lookback/hold sized); full-history O(n\u00b2) validation avoided.",
+          "fee_rate_per_side=0.001",
+          "slippage_rate_per_side=0.0005",
+          "spread_fraction=0.0002"
+        ]
+      },
+      "elapsed_seconds": {
+        "a": 103.2245397567749,
+        "b": 103.16576504707336
+      }
+    }
+  },
+  "results_json": "F:\\crypto-ai-scalper\\research-lab\\reports\\stage325_results_20261106T063406Z.json",
+  "limitations": [
+    "Synthetic candle quotes only; not L2/bookTicker.",
+    "No intra-bar protective stop simulation.",
+    "Historical next-open timing differs from tape H1.",
+    "Separate from BINANCE_SPOT_LIVE_CAPTURE results.",
+    "Not proof of future profitability; not production promotion."
+  ],
+  "conclusion": "PASS",
+  "report_path": "F:\\crypto-ai-scalper\\research-lab\\reports\\STAGE3.2.5_HISTORICAL_B0_H1_COMPARISON.md"
+}

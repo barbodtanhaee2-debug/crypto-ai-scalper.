@@ -1,0 +1,87 @@
+{
+  "dataset_id": "stage23_extended_btcusdt_20261030T191728Z-4751556f",
+  "manifest_path": "F:\\crypto-ai-scalper\\quote-tape\\reports\\STAGE2.3_EXTENDED_SHA256_MANIFEST.csv",
+  "session_json_sha256": "c3995cb3483d53b648054fee495c8323a71ad81bbe5791614a29a8c8f8f1cf70",
+  "missing_candle_intervals": [],
+  "reconnect_gaps": 1,
+  "stale_investigation": {
+    "kline_event": 69,
+    "host_receive": 1,
+    "negative_age_mixed_clock": 68,
+    "age_exceeds_3s_on_kline_e": 1
+  },
+  "momentum_breakout_frozen_quote_tape_replay": {
+    "stale_candle_decisions": 69,
+    "trade_count": 6,
+    "equity": 98.16904702218665
+  },
+  "momentum_breakout_lab_kline_event": {
+    "stale_candle_decisions": 69,
+    "trade_count": 6,
+    "equity": 98.16904702218665,
+    "matches_frozen_stale": true
+  },
+  "momentum_breakout_lab_host_receive": {
+    "stale_candle_decisions": 1,
+    "trade_count": 3,
+    "equity": 98.74128462647246,
+    "metrics": {
+      "net_profit_and_loss": -1.2587153735275454,
+      "net_return_percentage": -1.2587153735275414,
+      "completed_trades": 3,
+      "win_rate": 0.0,
+      "average_winning_trade": null,
+      "average_losing_trade": -0.4195717911758485,
+      "profit_factor": null,
+      "expectancy_per_trade": -0.4195717911758485,
+      "maximum_drawdown": 0.012587153735275365,
+      "average_holding_seconds": 1067.886077,
+      "fees_paid": 0.5954175468621989,
+      "estimated_spread_costs": 3.854302068218971e-05,
+      "estimated_slippage": 0.2977086820338133,
+      "rejected_entries": 4,
+      "unresolved_exits": 0,
+      "exposure_time_seconds": 3203.658231,
+      "candles_processed": 725,
+      "stale_candle_decisions": 1,
+      "stale_protective": 0,
+      "final_equity": 98.74128462647246,
+      "insufficient_sample": true,
+      "min_closed_trades_to_rank": 30,
+      "ranking_allowed": false,
+      "ranking_note": "Insufficient closed trades; do not rank this strategy.",
+      "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+    }
+  },
+  "demo_close_follow": {
+    "experiment_id": "stage31-demo-host",
+    "metrics": {
+      "net_profit_and_loss": -4.115900547453865,
+      "net_return_percentage": -4.115900547453865,
+      "completed_trades": 18,
+      "win_rate": 0.0,
+      "average_winning_trade": null,
+      "average_losing_trade": -0.22866114152521475,
+      "profit_factor": null,
+      "expectancy_per_trade": -0.22866114152521475,
+      "maximum_drawdown": 0.04115900547453876,
+      "average_holding_seconds": 199.94308077777777,
+      "fees_paid": 3.209469110330101,
+      "estimated_spread_costs": 0.00020825568822455297,
+      "estimated_slippage": 1.6047347297408736,
+      "rejected_entries": 319,
+      "unresolved_exits": 0,
+      "exposure_time_seconds": 3598.975454,
+      "candles_processed": 725,
+      "stale_candle_decisions": 1,
+      "stale_protective": 0,
+      "final_equity": 95.88409945254614,
+      "insufficient_sample": true,
+      "min_closed_trades_to_rank": 30,
+      "ranking_allowed": false,
+      "ranking_note": "Insufficient closed trades; do not rank this strategy.",
+      "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+    },
+    "stale_candle_decisions": 1
+  }
+}

@@ -1,0 +1,40 @@
+# --- caches / tooling ---
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+node_modules/
+.cursor/
+
+# --- generated / local graphs ---
+graphify-out/
+
+# --- runtime / journals / soak ---
+paper_broker.jsonl
+runtime_status.json
+stage7-3-soak-nai0en5y/
+
+# --- results / local data (keep out of GitHub) ---
+backtest-results/
+data/
+quote-tape/
+
+# --- research-lab heavy artifacts ---
+research-lab/data/
+research-lab/experiments/
+research-lab/**/__pycache__/
+research-lab/**/.pytest_cache/
+
+# --- secrets / env (defensive) ---
+.env
+.env.*
+*.pem
+*.key
+credentials.json
+**/secrets/

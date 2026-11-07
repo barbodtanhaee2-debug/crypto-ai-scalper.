@@ -1,0 +1,18 @@
+# Graphify-only exclusions. Not used by the trading application.
+data/
+quote-tape/
+backtest-results/
+__pycache__/
+.pytest_cache/
+.venv/
+venv/
+env/
+.env
+.env.*
+*.csv
+*.jsonl
+*.pyc
+paper_broker.jsonl
+runtime_status.json
+stage7-3-soak-*/
+graphify-out/

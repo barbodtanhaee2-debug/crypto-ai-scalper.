@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "notes": [
+    "Historical Vision registration only. Does not modify quote-tape catalog.json.",
+    "Research cutoff exclusive end: 2026-10-31T04:20:59.999000+00:00"
+  ],
+  "datasets": [
+    {
+      "dataset_id": "binance_spot_btcusdt_vision_stage324",
+      "provenance": "BINANCE_SPOT_HISTORICAL",
+      "symbol": "BTCUSDT",
+      "market": "spot",
+      "source": "https://data.binance.vision/",
+      "research_start": "2024-11-04T00:00:00+00:00",
+      "research_end_exclusive": "2026-10-31T04:20:59.999000+00:00",
+      "manifest_path": "research-lab/data/binance_spot/BTCUSDT/manifests/dataset_manifest_20261104T184815Z.json",
+      "manifest_sha256": "73ba52180fdc77fbd51e04ce881dcd44b623924ea478b99c9b563e99d3d91be8",
+      "processed_klines_dir": "research-lab/data/binance_spot/BTCUSDT/processed/klines_1m",
+      "dataset_root": "research-lab/data/binance_spot/BTCUSDT",
+      "immutable_raw": true,
+      "notes": "BINANCE_SPOT_HISTORICAL only. Sealed holdout excluded at bind/load. Not order-book depth."
+    }
+  ]
+}

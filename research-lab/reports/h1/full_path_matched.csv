@@ -1,0 +1,2 @@
+baseline_entry,candidate_entry,entry_delay_seconds,baseline_exit,candidate_exit,baseline_net_pnl,candidate_net_pnl,baseline_reason,candidate_reason
+2026-10-30T23:34:00.292345+00:00,2026-10-30T23:34:59.988985+00:00,59.69664,2026-10-30T23:46:00.015243+00:00,2026-10-30T23:46:00.015243+00:00,-0.3075990025857338,-0.2674905493152743,Maximum holding time reached.,Maximum holding time reached.

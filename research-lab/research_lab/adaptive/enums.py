@@ -1,0 +1,101 @@
+"""Centralized vocabularies for adaptive Stage A contracts."""
+
+from __future__ import annotations
+
+from enum import Enum
+
+
+class EngineId(str, Enum):
+    S1 = "S1"
+    S2 = "S2"
+    S3 = "S3"
+    S4 = "S4"
+
+
+class TradeDirection(str, Enum):
+    LONG = "long"
+    # Short reserved for future spot-policy changes; not used by Stage A engines.
+
+
+class SignalStatus(str, Enum):
+    """Candidate / signal lifecycle vocabulary (architecture-aligned)."""
+
+    VALID_CANDIDATE = "VALID_CANDIDATE"
+    CONFIRMATION_ONLY = "CONFIRMATION_ONLY"
+    INELIGIBLE = "INELIGIBLE"
+    NO_SIGNAL = "NO_SIGNAL"
+    PENDING_CONFIRMATION = "PENDING_CONFIRMATION"
+    CONFIRMED_SIGNAL = "CONFIRMED_SIGNAL"
+    INVALIDATED = "INVALIDATED"
+    EXPIRED = "EXPIRED"
+    REJECTED_OPPORTUNITY = "REJECTED_OPPORTUNITY"
+    MISSING_EVIDENCE = "MISSING_EVIDENCE"
+    CONFLICTING_EVIDENCE = "CONFLICTING_EVIDENCE"
+    STALE_OR_INVALID_INPUT = "STALE_OR_INVALID_INPUT"
+
+
+# Statuses that must never be treated as actionable primary proposals.
+NON_ACTIONABLE_SIGNAL_STATUSES = frozenset(
+    {
+        SignalStatus.INELIGIBLE,
+        SignalStatus.NO_SIGNAL,
+        SignalStatus.PENDING_CONFIRMATION,
+        SignalStatus.INVALIDATED,
+        SignalStatus.EXPIRED,
+        SignalStatus.REJECTED_OPPORTUNITY,
+        SignalStatus.MISSING_EVIDENCE,
+        SignalStatus.CONFLICTING_EVIDENCE,
+        SignalStatus.STALE_OR_INVALID_INPUT,
+    }
+)
+
+
+class EvidenceKind(str, Enum):
+    INDEPENDENT = "INDEPENDENT"
+    CORRELATED = "CORRELATED"
+    CONFIRMATION = "CONFIRMATION"
+    MISSING = "MISSING"
+    CONFLICTING = "CONFLICTING"
+
+
+class EvidenceFamily(str, Enum):
+    MARKET_REGIME = "MARKET_REGIME"
+    DIRECTIONAL_STRUCTURE = "DIRECTIONAL_STRUCTURE"
+    MOMENTUM = "MOMENTUM"
+    VOLATILITY = "VOLATILITY"
+    PRICE_ACTION = "PRICE_ACTION"
+    DATA_QUALITY = "DATA_QUALITY"
+    OPPORTUNITY_ECONOMICS = "OPPORTUNITY_ECONOMICS"
+
+
+class EvidenceStatus(str, Enum):
+    SATISFIED = "SATISFIED"
+    NOT_SATISFIED = "NOT_SATISFIED"
+    MISSING = "MISSING"
+    CONFLICTING = "CONFLICTING"
+    UNKNOWN = "UNKNOWN"
+
+
+class OpportunityAssessmentStatus(str, Enum):
+    OPPORTUNITY = "OPPORTUNITY"
+    NO_OPPORTUNITY = "NO_OPPORTUNITY"
+    REJECTED_COSTS_TOO_HIGH = "REJECTED_COSTS_TOO_HIGH"
+    INCOMPLETE_COST_INFORMATION = "INCOMPLETE_COST_INFORMATION"
+    UNAVAILABLE = "UNAVAILABLE"
+
+
+class DecisionOutcomeKind(str, Enum):
+    RECOMMENDATION = "RECOMMENDATION"
+    NO_TRADE = "NO_TRADE"
+
+
+class NoTradeReasonCode(str, Enum):
+    NO_ELIGIBLE_CANDIDATE = "NO_ELIGIBLE_CANDIDATE"
+    INSUFFICIENT_EVIDENCE = "INSUFFICIENT_EVIDENCE"
+    CONFLICTING_EVIDENCE = "CONFLICTING_EVIDENCE"
+    INCOMPLETE_COST_INFORMATION = "INCOMPLETE_COST_INFORMATION"
+    STALE_OR_INVALID_MARKET_DATA = "STALE_OR_INVALID_MARKET_DATA"
+    POSITION_STATE_RESTRICTION = "POSITION_STATE_RESTRICTION"
+    REGIME_UNKNOWN_OR_TRANSITIONING = "REGIME_UNKNOWN_OR_TRANSITIONING"
+    CONTROLLER_POLICY = "CONTROLLER_POLICY"
+    OTHER = "OTHER"

@@ -1,0 +1,16 @@
+{
+  "datasets": [
+    {
+      "dataset_id": "stage23_extended_btcusdt_20261030T191728Z-4751556f",
+      "session_id": "20261030T191728Z-4751556f",
+      "symbol": "BTCUSDT",
+      "market": "spot",
+      "session_dir": "quote-tape/sessions/20261030T191728Z-4751556f",
+      "manifest_path": "quote-tape/reports/STAGE2.3_EXTENDED_SHA256_MANIFEST.csv",
+      "validation_report": "quote-tape/reports/STAGE2.3_EXTENDED_VALIDATION.md",
+      "session_json_sha256": "c3995cb3483d53b648054fee495c8323a71ad81bbe5791614a29a8c8f8f1cf70",
+      "immutable": true,
+      "notes": "Stage 2.3 extended public capture. Original files must not be modified. bookTicker E was not captured."
+    }
+  ]
+}

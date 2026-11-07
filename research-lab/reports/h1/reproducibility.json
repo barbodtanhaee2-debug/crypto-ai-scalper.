@@ -1,0 +1,7 @@
+{
+  "baseline_journal_fingerprint_equal": true,
+  "candidate_journal_fingerprint_equal": true,
+  "baseline_trades_equal": true,
+  "candidate_trades_equal": true,
+  "unexplained_differences": []
+}

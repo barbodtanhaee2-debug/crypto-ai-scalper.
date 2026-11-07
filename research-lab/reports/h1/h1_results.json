@@ -1,0 +1,113 @@
+{
+  "dataset_id": "stage23_extended_btcusdt_20261030T191728Z-4751556f",
+  "session_id": "20261030T191728Z-4751556f",
+  "manifest_path": "F:\\crypto-ai-scalper\\quote-tape\\reports\\STAGE2.3_EXTENDED_SHA256_MANIFEST.csv",
+  "session_json_sha256": "c3995cb3483d53b648054fee495c8323a71ad81bbe5791614a29a8c8f8f1cf70",
+  "decision_clock": "host_receive",
+  "split": {
+    "train_start": "2026-10-30T19:17:59.999000+00:00",
+    "train_end": "2026-10-31T01:19:59.999000+00:00",
+    "validation_start": "2026-10-31T01:19:59.999000+00:00",
+    "validation_end": "2026-10-31T04:20:59.999000+00:00",
+    "test_start": "2026-10-31T04:20:59.999000+00:00",
+    "test_end": "2026-10-31T07:22:59.999000+00:00",
+    "train_candles": 362,
+    "validation_candles": 181,
+    "test_candles": 182,
+    "replay_candles": 543,
+    "holdout_excluded_from_replay": true
+  },
+  "baseline_host_receive": {
+    "stale_candle_decisions": 1,
+    "trade_count_full_replay_window": 2,
+    "scored_trade_count": 2,
+    "equity_end_of_replay_window": 99.23879528819245,
+    "metrics": {
+      "net_profit_and_loss": -0.7612047118075549,
+      "net_return_percentage": -0.7612047118075504,
+      "completed_trades": 2,
+      "win_rate": 0.0,
+      "average_winning_trade": null,
+      "average_losing_trade": -0.38060235590377745,
+      "profit_factor": null,
+      "expectancy_per_trade": -0.38060235590377745,
+      "maximum_drawdown": 0.007612047118075509,
+      "average_holding_seconds": 1139.8386785,
+      "fees_paid": 0.3977345192365693,
+      "estimated_spread_costs": 2.577631988086307e-05,
+      "estimated_slippage": 0.1988672184675411,
+      "rejected_entries": 4,
+      "unresolved_exits": 0,
+      "exposure_time_seconds": 2279.677357,
+      "candles_processed": 543,
+      "stale_candle_decisions": 1,
+      "stale_protective": 0,
+      "final_equity": 99.23879528819245,
+      "insufficient_sample": true,
+      "min_closed_trades_to_rank": 30,
+      "ranking_allowed": false,
+      "ranking_note": "Insufficient closed trades; do not rank this strategy.",
+      "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+    }
+  },
+  "candidate_host_receive": {
+    "stale_candle_decisions": 1,
+    "trade_count_full_replay_window": 1,
+    "scored_trade_count": 1,
+    "equity_end_of_replay_window": 99.73250945068473,
+    "metrics": {
+      "net_profit_and_loss": -0.2674905493152743,
+      "net_return_percentage": -0.2674905493152746,
+      "completed_trades": 1,
+      "win_rate": 0.0,
+      "average_winning_trade": null,
+      "average_losing_trade": -0.2674905493152743,
+      "profit_factor": null,
+      "expectancy_per_trade": -0.2674905493152743,
+      "maximum_drawdown": 0.0026749054931526927,
+      "average_holding_seconds": 660.026258,
+      "fees_paid": 0.19943341264916223,
+      "estimated_spread_costs": 1.2895958271591987e-05,
+      "estimated_slippage": 0.0997167142394755,
+      "rejected_entries": 4,
+      "unresolved_exits": 0,
+      "exposure_time_seconds": 660.026258,
+      "candles_processed": 543,
+      "stale_candle_decisions": 1,
+      "stale_protective": 0,
+      "final_equity": 99.73250945068473,
+      "insufficient_sample": true,
+      "min_closed_trades_to_rank": 30,
+      "ranking_allowed": false,
+      "ranking_note": "Insufficient closed trades; do not rank this strategy.",
+      "primary_score": "risk_adjusted_after_costs_not_gross_or_win_rate"
+    }
+  },
+  "overlay_summary": {
+    "baseline_long_signals": 2,
+    "confirmed": 1,
+    "failed_close": 1,
+    "missing_minute": 0,
+    "unresolved": 0
+  },
+  "full_path_summary": {
+    "matched": 1,
+    "unmatched_baseline": 1,
+    "unmatched_candidate": 0
+  },
+  "reproducibility": {
+    "baseline_journal_fingerprint_equal": true,
+    "candidate_journal_fingerprint_equal": true,
+    "baseline_trades_equal": true,
+    "candidate_trades_equal": true,
+    "unexplained_differences": []
+  },
+  "classification": {
+    "economic_result": "inconclusive",
+    "reason": "Either arm has fewer than 30 completed scored trades; H1 is not an economic ranking result.",
+    "baseline_completed_scored_trades": 2,
+    "candidate_completed_scored_trades": 1,
+    "min_closed_trades_to_rank": 30
+  },
+  "kline_event_stage24_counts_not_used": true
+}

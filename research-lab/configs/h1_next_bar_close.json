@@ -1,0 +1,25 @@
+{
+  "experiment_id_prefix": "h1",
+  "hypothesis": "next_bar_close_confirmation",
+  "baseline_strategy": "momentum_breakout_logged",
+  "candidate_strategy": "h1_confirmed_momentum_breakout",
+  "decision_clock": "host_receive",
+  "stale_after_seconds": 3.0,
+  "symbol": "BTCUSDT",
+  "long_only": true,
+  "initial_equity": 100.0,
+  "fee_rate_per_side": 0.001,
+  "slippage_rate_per_side": 0.0005,
+  "risk_fraction": 0.005,
+  "daily_loss_limit_fraction": 0.02,
+  "max_drawdown_fraction": 0.10,
+  "min_closed_trades_to_rank": 30,
+  "split": {
+    "method": "chronological_by_candle_close",
+    "train": 0.5,
+    "validation": 0.25,
+    "test": 0.25,
+    "holdout": "final_25_percent_unscored"
+  },
+  "notes": "Frozen momentum_breakout parameters unchanged. No search. host_receive only."
+}
